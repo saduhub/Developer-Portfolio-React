@@ -1,0 +1,8 @@
+node_modules
+README.md
+package-lock.json
+.DS_Store
+.dccache
+.env
+dist/
+.eslintrc.cjs
