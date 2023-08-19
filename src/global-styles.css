@@ -1,3 +1,17 @@
+:root{
+    --background-color-1: rgb(2, 2, 2);
+    --background-color-2: #0f0f0f;
+    --green-font-color: #25fd30;
+    --teal-font-color: rgb(127, 254, 254);
+    --yellow-font-color: rgb(255, 255, 113);
+    --purple-font-color: rgba(255, 150, 255, 1);
+    --orange-font-color: rgba(255, 204, 153, 1);
+    --standard-padding: 20px;
+    --standard-margin-bottom: 100px;
+    --standard-margin: 20px;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +21,6 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: white;
     color: white;
 }
