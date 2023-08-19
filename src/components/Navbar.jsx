@@ -1,3 +1,6 @@
+// No more anchor tags. React Link component for seamless navigation
+import { Link } from "react-router-dom";
+
 const styles = {
   headerStyle: {
     // display: 'flex',
@@ -56,13 +59,29 @@ function Navbar() {
   return (
     <header style={styles.headerStyle}>
         <div>
-            <p><a href="#home" style={styles.iconStyle}>JD</a></p>
+            <p>
+              <Link to="/" style={styles.iconStyle}>
+                JD
+              </Link>
+            </p>
         </div>
         <nav style={styles.navbarStyle}>
             <ul style={styles.ulStyle}>
-                <li style={styles.liStyle}><a href="#projects" style={styles.linkStyle}>Projects</a></li>
-                <li style={styles.liStyle}><a href="#about" style={styles.linkStyle}>About</a></li>
-                <li style={styles.liStyle}><a href="#contact" style={styles.contactStyle}>Contact Me</a></li>
+              <li style={styles.liStyle}>
+                <Link to="/projects" style={styles.linkStyle}>
+                  Projects
+                </Link>
+              </li>
+              <li style={styles.liStyle}>
+                <Link to="/about" style={styles.linkStyle}>
+                  About
+                </Link>
+              </li>
+              <li style={styles.liStyle}>
+                <Link to="/contact" style={styles.contactStyle}>
+                  Contact Me
+                </Link>
+              </li>
             </ul>
         </nav>
     </header>
