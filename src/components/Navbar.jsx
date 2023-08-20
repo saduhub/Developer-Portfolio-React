@@ -29,7 +29,7 @@ const styles = {
     fontSize: '2rem',
     textShadow: '0px 0px 4px var(--purple-font-color)',
     textDecoration: 'none', 
-    margin: 'auto',
+    margin: '1rem auto 0rem',
   },
   ulStyle: {
     display: 'flex',
