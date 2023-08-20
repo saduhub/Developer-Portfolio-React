@@ -1,20 +1,49 @@
+// import entrance from '../assets/images/entrance.jpg';
+
 const styles = {
     sectionStyle: {
-      backgroundColor: 'pink',
+      backgroundColor: 'black',
+      marginTop: '10rem',
+      marginLeft: '1rem',
+      marginRight: '1rem',
+      borderRadius: '1rem',
+      padding: '1rem',
     },
+    descriptionStyle: {
+        color: 'var(--purple-font-color)',
+        textAlign: 'center',
+
+    },
+    nameStyle: {
+        textAlign: 'center',
+
+    },
+    // imageContainerStyle: {
+    //     width: '100%',
+    //     height: '100vh',
+    //     display: 'flex',
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     // overflow: 'hidden',
+    // },
+    // imageStyle: {
+    //     width: '120%',
+    //     height: '100%',
+    //     objectFit: 'fill',
+    // }
 };
   
 function Landing() {
     return (
-        <div style={styles.sectionStyle}>
-            <div>
-                <img src="" alt="RGB-lit keyboard"/>
-            </div>
-            <p>Hello! My name is</p>
-            <h1>Jorge Duarte</h1>
-            <p>and I am a</p>
-            <p>full-stack application developer</p>
-        </div>
+        < section style={styles.sectionStyle}>
+            {/* <div style={styles.imageContainer}>
+                <img src={entrance} alt="RGB-lit keyboard" style={styles.imageStyle}/>
+            </div> */}
+            <p style={styles.descriptionStyle}>Hello! My name is</p>
+            <h1 style={styles.nameStyle}>Jorge Duarte</h1>
+            <p style={styles.descriptionStyle}>and I am a</p>
+            <p style={styles.descriptionStyle}>full-stack application developer</p>
+        </section>
     );
 }
   

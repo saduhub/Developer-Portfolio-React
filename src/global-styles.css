@@ -1,3 +1,31 @@
+/* Css reset */
+/* Box sizing rules */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default margin */
+  body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 0;
+  }
+  
+  /* Remove default padding */
+  ul, ol {
+    padding: 0;
+  }
+  
+  /* Remove default list style */
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* Set default font family and size */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+/* Css reset */
+
 :root{
     --background-color-1: rgb(2, 2, 2);
     --background-color-2: #0f0f0f;
@@ -21,6 +49,6 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: black;
     color: white;
 }
