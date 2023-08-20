@@ -1,3 +1,5 @@
+import profile from '../assets/images/profile.png';
+
 const styles = {
     sectionStyle: {
       backgroundColor: 'black',
@@ -13,6 +15,19 @@ const styles = {
       textAlign: 'center',
       margin: '1rem 5rem',
     },
+    imageDivStyle: {
+        display: 'flex',
+        padding: '1rem',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    imageStyle: {
+        maxWidth: '15rem',
+        height: 'auto',
+        padding: '5px',
+        margin: '0px 20px',
+        borderRadius: '1rem',
+    },
 };
   
 function About() {
@@ -24,8 +39,8 @@ function About() {
                 Ratione ex doloremque, a voluptas architecto facere dolorem, voluptatibus possimus corporis deleniti consequuntur culpa in provident ipsam nobis aliquid magnam nisi alias error excepturi! Similique minima veniam blanditiis ut atque.
                 Vitae, eius omnis veritatis accusantium repellat nisi ex, qui officia aut dignissimos ea esse est odio iure itaque, reprehenderit pariatur modi quisquam atque minus explicabo illo saepe neque. Tempora, quis.</p>
             </div>
-            <div>
-                <img src="" alt="" />
+            <div style={styles.imageDivStyle}>
+                <img src={profile} alt="Jorge Duarte" style={styles.imageStyle}/>
             </div>
         </section> 
     );
