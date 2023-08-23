@@ -1,5 +1,5 @@
 // No more anchor tags. React Link component for seamless navigation
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const styles = {
   headerStyle: {
@@ -41,7 +41,14 @@ const styles = {
     textDecoration: 'none',
     textShadow: '0px 0px 3px var(--yellow-font-color)',
     textAlign: 'center',
-  }
+  },
+  activeStyle: {
+    fontSize: '1rem',
+    color: 'var(--yellow-font-color)',
+    textDecoration: 'none',
+    textShadow: '0px 0px 3px var(--yellow-font-color)',
+    textAlign: 'center',
+  },
 };
 
 const tabs = {
@@ -64,6 +71,7 @@ const tabs = {
   };
 
 function Navbar() {
+  const location = useLocation();
   return (
     <header style={styles.headerStyle}>
         <div>
@@ -77,9 +85,10 @@ function Navbar() {
             <ul style={styles.ulStyle}>
             {Object.keys(tabs).map((tabKey) => {
                 const tab = tabs[tabKey];
+                const isActive = location.pathname === tab.link;
                 return (
                     <li style={styles.liStyle}>
-                        <Link to={tab.link} style={styles.linkStyle}>
+                        <Link to={tab.link} style={isActive ? styles.activeStyle : styles.linkStyle}>
                         {tab.title}
                         </Link>
                     </li>

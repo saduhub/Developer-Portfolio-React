@@ -9,6 +9,7 @@ import Landing from "./components/Landing"
 import About from "./components/About"
 import ContactMe from "./components/ContactMe"
 import Projects from "./components/Projects"
+import Resume from "./components/Resume"
 import Footer from "./components/Footer"
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactMe />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects" element={<Projects/>} />
+          <Route path="/resume" element={<Resume/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>
