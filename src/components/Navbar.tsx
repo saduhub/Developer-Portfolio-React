@@ -3,28 +3,17 @@ import { Link } from "react-router-dom";
 
 const styles = {
   headerStyle: {
-    // display: 'flex',
-    // flexDirection: 'column',
     justifyContent: 'space-around',
     position: 'fixed',
     width: '100vw',
     top: '0',
     zIndex: '2',
     backgroundColor: 'rgba(0, 0, 0, 0.9)',
-    // padding: '1rem',
   },
-  // navbarStyle: {
-  //   background: 'black',
-  //   color: 'white',
-  // },
-  // paragraphStyle: {
-
-  // },
   iconStyle: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    // marginLeft: 'var(--standard-margin)',
     color: 'white',
     fontSize: '2rem',
     textShadow: '0px 0px 4px var(--purple-font-color)',
@@ -55,6 +44,25 @@ const styles = {
   }
 };
 
+const tabs = {
+    aboutMe: {
+      title: 'About Me',
+      link: '/about',
+    },
+    portfolio: {
+      title: 'Portfolio',
+      link: '/projects'
+    },
+    contact: {
+      title: 'Contact',
+      link: '/contact',
+    },
+    resume: {
+      title: 'Resume',
+      link: '/resume',
+    },
+  };
+
 function Navbar() {
   return (
     <header style={styles.headerStyle}>
@@ -67,21 +75,16 @@ function Navbar() {
         </div>
         <nav style={styles.navbarStyle}>
             <ul style={styles.ulStyle}>
-              <li style={styles.liStyle}>
-                <Link to="/projects" style={styles.linkStyle}>
-                  Projects
-                </Link>
-              </li>
-              <li style={styles.liStyle}>
-                <Link to="/about" style={styles.linkStyle}>
-                  About
-                </Link>
-              </li>
-              <li style={styles.liStyle}>
-                <Link to="/contact" style={styles.contactStyle}>
-                  Contact Me
-                </Link>
-              </li>
+            {Object.keys(tabs).map((tabKey) => {
+                const tab = tabs[tabKey];
+                return (
+                    <li style={styles.liStyle}>
+                        <Link to={tab.link} style={styles.linkStyle}>
+                        {tab.title}
+                        </Link>
+                    </li>
+                );
+            })}
             </ul>
         </nav>
     </header>
