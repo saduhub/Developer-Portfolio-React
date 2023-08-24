@@ -1,7 +1,7 @@
-// import songSensei from '../assets/images/songsensei.png';
-// import tuneStack from '../assets/images/tunestack.png';
-// import geometry from '../assets/images/geometry.jpg';
-import pic from '../assets/images/react.svg';
+import songSensei from '../assets/images/songsensei.png';
+import tuneStack from '../assets/images/tunestack.png';
+import geometry from '../assets/images/geometry.jpg';
+import keyboard from '../assets/images/rgbKeyboard.jpg';
 
 const styles = {
   sectionStyle: {
@@ -13,12 +13,13 @@ const styles = {
     padding: '1rem',
     backgroundColor: 'gray',
     borderRadius: '1rem',
+    textAlign: 'center',
   },
   imageStyle: {
-    maxWidth: '15rem',
+    maxWidth: '20rem',
     height: 'auto',
     padding: '5px',
-    margin: '0px 20px',
+    margin: '0 auto',
     borderRadius: '1rem',
   },
   divStyle: {
@@ -39,19 +40,43 @@ const projects = {
     title: 'SongSensei',
     description: 'Keep up with your favorite artists!',
     link: 'https://saduhub.github.io/SongSensei/',
-    image: pic,
+    linkGit: 'https://github.com/saduhub/SongSensei',
+    image: songSensei,
   },
   tuneStack: {
     title: 'TuneStack',
     description: 'Discover, catalogue, cherish music!',
     link: 'https://tunestack-v1-74649ac6d540.herokuapp.com/login',
-    image: pic,
+    linkGit: 'https://github.com/jenho-webdev/TuneStack',
+    image: tuneStack,
   },
   Project3: {
     title: 'Project 3',
     description: 'Geometry drawing tool',
     link: 'https://github.com/saduhub',
-    image: pic,
+    linkGit: 'https://github.com/saduhub',
+    image: geometry,
+  },
+  Project4: {
+    title: 'Project 4',
+    description: 'This is project 4',
+    link: 'https://github.com/saduhub',
+    linkGit: 'https://github.com/saduhub',
+    image: keyboard,
+  },
+  Project5: {
+    title: 'Project 5',
+    description: 'This is project 5',
+    link: 'https://github.com/saduhub',
+    linkGit: 'https://github.com/saduhub',
+    image: keyboard,
+  },
+  Project6: {
+    title: 'Project 6',
+    description: 'This is project 6',
+    link: 'https://github.com/saduhub',
+    linkGit: 'https://github.com/saduhub',
+    image: keyboard,
   },
 };
 
@@ -69,6 +94,7 @@ function Projects() {
               <a href={project.link}>
                 <img src={project.image} alt={`${project.title} screenshot`} style={styles.imageStyle}/>
               </a>
+              <p><a href={project.link}>Deployed App</a> | <a href={project.linkGit}>GitHub</a></p>
             </div>
           </div>
         );
