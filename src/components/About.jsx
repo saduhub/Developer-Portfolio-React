@@ -35,9 +35,7 @@ function About() {
         <section style={styles.sectionStyle} >
             <div style={styles.divStyle}>
                 <h3 style={styles.h3Style}>About me</h3>
-                <p style={styles.pStyle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ratione provident corrupti delectus facilis modi nostrum, voluptatum exercitationem repellat rerum ipsam cumque sed eos. Nesciunt nemo dolore distinctio sed incidunt.
-                Ratione ex doloremque, a voluptas architecto facere dolorem, voluptatibus possimus corporis deleniti consequuntur culpa in provident ipsam nobis aliquid magnam nisi alias error excepturi! Similique minima veniam blanditiis ut atque.
-                Vitae, eius omnis veritatis accusantium repellat nisi ex, qui officia aut dignissimos ea esse est odio iure itaque, reprehenderit pariatur modi quisquam atque minus explicabo illo saepe neque. Tempora, quis.</p>
+                <p style={styles.pStyle}>Hello! I'm a budding full-stack developer taking my first steps into the exciting world of web development. While I may be at the start of my journey, I bring a strong work ethic, creative flair, and ambition to the table.As someone who's transitioning their programming hobby into a full-time career, I can say with enthusiasm that I'm truly excited about the possibilities. My dedication to programming has evolved from a pastime into a passion for programming, new technologies, and the world of development. When I'm not coding, you'll find me chasing platinum trophies or cheering on my favorite sports teams. I describe myself as a student first and with each line of code, I'm excited to create an application better than the one before. My eagerness to learn and adapt helps me stay on top of industry trends and write code that I hope will improve user experience. I'm excited about the path ahead, and I'm confident in my ability to grow and contribute to the community. Let's connect and explore the exciting possibilities that lie ahead!</p>
             </div>
             <div style={styles.imageDivStyle}>
                 <img src={profile} alt="Jorge Duarte" style={styles.imageStyle}/>

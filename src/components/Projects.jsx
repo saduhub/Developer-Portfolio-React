@@ -5,13 +5,20 @@ import geometry from '../assets/images/geometry.jpg';
 const styles = {
   sectionStyle: {
     backgroundColor: 'black',
-    marginTop: '10rem',
+  },
+  AllProjectsDivStyle: {
+    display: 'flex', // Activate flexbox
+    flexDirection: 'column', // Align children vertically
+    alignItems: 'center', // Center children horizontally
+    justifyContent: 'center', // Center children vertically
+    height: '100%',
   },
   projectDivStyle: {
     margin: '2rem',
     padding: '1rem',
     backgroundColor: 'gray',
     borderRadius: '1rem',
+    maxWidth: '20rem'
   },
   imageStyle: {
     maxWidth: '15rem',
@@ -57,7 +64,8 @@ const projects = {
 function Projects() {
   return (
     <section style={styles.sectionStyle}>
-        {/* Iterate over each project. Create specified html for each project and assign identifying key based on the keys found in projects object. */}
+      <div style={styles.AllProjectsDivStyle}>
+      {/* Iterate over each project. Create specified html for each project and assign identifying key based on the keys found in projects object. */}
       {Object.keys(projects).map((projectKey) => {
         const project = projects[projectKey];
         return (
@@ -72,9 +80,10 @@ function Projects() {
           </div>
         );
       })}
+      </div>
       <div style={styles.divStyle}>
         <h2 style={styles.h2Style}>Technologies Used</h2>
-        <p style={styles.pStyle}>HTML, CSS, JavaScript, Git, Bootstrap, React, Node.js, Express.js, and MongoDB.</p>
+        <p style={styles.pStyle}>JavaScript ES6+, CSS3, HTML5, SQL, NoSQL, GitHub, MongoDB, MySQL, Express, React, Node, JQuery, Bootstrap, Tailwind CSS, DOM, APIs, JSON, AJAX, OOP, MVC, Sequelize, Jest test suites, git, npm, Mongoose.</p>
       </div>
     </section>
   );
