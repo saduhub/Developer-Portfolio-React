@@ -2,21 +2,18 @@
 
 const styles = {
     sectionStyle: {
-      backgroundColor: 'black',
-      marginTop: '10rem',
+    //   backgroundColor: 'black',
+      paddingTop: '10rem',
       marginLeft: '1rem',
       marginRight: '1rem',
       borderRadius: '1rem',
-      padding: '1rem',
     },
     descriptionStyle: {
-        color: 'var(--purple-font-color)',
+        color: '#FFA500',
         textAlign: 'center',
-
     },
     nameStyle: {
         textAlign: 'center',
-
     },
     // imageContainerStyle: {
     //     width: '100%',

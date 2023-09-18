@@ -6,7 +6,7 @@ const styles = {
     justifyContent: 'space-around',
     width: '100vw',
     bottom: '0',
-    backgroundColor: 'rgba(0, 0, 0)',
+    // backgroundColor: 'rgba(0, 0, 0)',
     color: 'white',
     padding: '1rem',
     textAlign: 'center',

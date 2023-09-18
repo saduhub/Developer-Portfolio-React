@@ -35,15 +35,15 @@ function App() {
 function Navigation() {
   // Use method from react-router-dom to navigate to a specific url.
   const navigateTo = useNavigate();
-  // useState to store initial value of navigatedToAbout and updater function to update navigatedToAbout when it is true. 
-  const [navigatedToAbout, navigationComplete] = useState(false);
-  // Hook used to manipulate value of navigatedToAbout by checking the value of navigatedToAbout as specified in the array.
+  // useState to store initial value of navigatedToLanding and updater function to update navigatedToLanding when it is true. 
+  const [navigatedToLanding, navigationComplete] = useState(false);
+  // Hook used to manipulate value of navigatedToLanding by checking the value of navigatedToLanding as specified in the array.
   useEffect(() => {
-    if (!navigatedToAbout) {
-      navigateTo('/about');
+    if (!navigatedToLanding) {
+      navigateTo('/');
       navigationComplete(true);
     }
-  }, [navigatedToAbout, navigateTo]);
+  }, [navigatedToLanding, navigateTo]);
   // Nothing rendered
   return null;
 }
