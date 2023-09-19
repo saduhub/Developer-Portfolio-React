@@ -1,22 +1,25 @@
 import songSensei from '../assets/images/songsensei.png';
 import tuneStack from '../assets/images/tunestack.png';
-import geometry from '../assets/images/geometry.jpg';
+import careconnect from '../assets/images/careconnect.png';
+import scheduler from '../assets/images/scheduler.png';
+import editor from '../assets/images/editor.png';
+import weather from '../assets/images/weather.png';
 
 const styles = {
   sectionStyle: {
     backgroundColor: 'black',
   },
   AllProjectsDivStyle: {
-    display: 'flex', // Activate flexbox
-    flexDirection: 'column', // Align children vertically
-    alignItems: 'center', // Center children horizontally
-    justifyContent: 'center', // Center children vertically
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
     height: '100%',
   },
   projectDivStyle: {
     margin: '2rem',
     padding: '1rem',
-    backgroundColor: 'gray',
+    backgroundColor: 'rgba(30, 30, 30, 0.8)',
     borderRadius: '1rem',
     maxWidth: '20rem'
   },
@@ -29,14 +32,15 @@ const styles = {
   },
   divStyle: {
     textShadow: '0px 0px 4px var(--purple-font-color)',
-    marginBottom: '5rem',
+    margin: '5rem',
   },
   h2Style: {
     textAlign: 'center',
   },
   pStyle: {
     textAlign: 'center',
-    margin: '1rem 5rem',
+    margin: '1rem auto',
+    maxWidth: '20rem'
   },
 };
 
@@ -53,11 +57,29 @@ const projects = {
     link: 'https://tunestack-v1-74649ac6d540.herokuapp.com/login',
     image: tuneStack,
   },
-  Project3: {
-    title: 'Project 3',
-    description: 'Geometry drawing tool',
-    link: 'https://github.com/saduhub',
-    image: geometry,
+  careConnect: {
+    title: 'Care Connect',
+    description: 'Plan, volunteer, and coordinate assistance within your community.',
+    link: 'https://care-connect-378fa5174d96.herokuapp.com/',
+    image: careconnect,
+  },
+  scheduler: {
+    title: 'Personal Scheduler',
+    description: 'Plan your whole day!',
+    link: 'https://saduhub.github.io/Personal-Scheduler/',
+    image: scheduler,
+  },
+  editor: {
+    title: 'Test Editor PWA',
+    description: 'Just another text editor.',
+    link: 'https://jate-js-793743c34898.herokuapp.com/',
+    image: editor,
+  },
+  weather: {
+    title: 'Weather Watch',
+    description: 'Weather app using Open Weather API',
+    link: 'https://saduhub.github.io/Weather-Forecast-App/',
+    image: weather,
   },
 };
 

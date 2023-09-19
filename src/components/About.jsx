@@ -3,10 +3,11 @@ import profile from '../assets/images/profile.png';
 const styles = {
     sectionStyle: {
       backgroundColor: 'black',
-      marginTop: '10rem',
     },
     divStyle: {
       textShadow: '0px 0px 4px var(--purple-font-color)',
+      maxWidth: '50rem',
+      margin: '5rem auto'
     },
     h3Style: {
       textAlign: 'center',
@@ -22,7 +23,7 @@ const styles = {
         alignItems: 'center',
     },
     imageStyle: {
-        maxWidth: '15rem',
+        maxWidth: '20rem',
         height: 'auto',
         padding: '5px',
         margin: '0px 20px',
