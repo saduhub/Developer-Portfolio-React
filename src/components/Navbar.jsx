@@ -1,31 +1,43 @@
+import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
 const styles = {
-  ulStyle: {
-    padding: 0,
-    textAlign: 'center', 
-  },
+  ulStyle: (isMobile) => ({
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
+  }),
   liStyle: {
-    margin: '1rem 0' 
+    margin: '1rem 0',
   },
   linkStyle: {
-    textDecoration: 'none', 
-    color: 'inherit'  
+    textDecoration: 'none',
+    color: 'white',
   },
-  navbarStyle: {
-    
-  },
-  contactStyle: {
-    
-  }
+  navbarStyle: {},
+  contactStyle: {},
 };
 
 function Navbar() {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 450);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <nav style={styles.navbarStyle}>
-        <ul style={styles.ulStyle}>
+        <ul style={styles.ulStyle(isMobile)}>
           <li style={styles.liStyle}>
-            <Link to="/about" style={styles.linkStyle}>
+            <Link to="/" style={styles.linkStyle}>
               Jorge Duarte
             </Link>
           </li>

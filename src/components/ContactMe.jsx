@@ -3,7 +3,7 @@ import gitHub from '../assets/images/github.png';
 
 const styles = {
     sectionStyle: {
-      backgroundColor: 'black',
+    //   backgroundColor: 'black',
       marginTop: '10rem',
     },
     h4Style: {
