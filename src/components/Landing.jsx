@@ -25,12 +25,13 @@ const styles = {
         marginTop: '20px'
     },
     imageStyle: (index) => ({
-        borderRadius: '50%',
+        // borderRadius: '25%',
         width: '50px',
         height: '50px',
         margin: '5px',
         opacity: 0,
         animation: `fadeInRotate 4s ${index * 0.4}s forwards`,
+        objectFit: 'cover',
     }),
 };
 
@@ -45,9 +46,16 @@ const keyframes = `
 
 // Images
 const techImages = [
-    '../assets/images/careconnect.png',
-    '../assets/images/careconnect.png',
-    '../assets/images/careconnect.png',
+    '/images/mongodb.png',
+    '/images/mysql.png',
+    '/images/node-js.png',
+    '/images/graphql.png',
+    '/images/express.svg',
+    '/images/react.png',
+    '/images/tailwind-css.svg',
+    '/images/heroku.png',
+    // '/images/jquery.png',
+    // '/images/python.png',
 ];
 
 function Landing() {

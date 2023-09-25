@@ -1,5 +1,5 @@
-import linkedIn from '../assets/images/linked.png';
-import gitHub from '../assets/images/github.png';
+import linkedIn from '/images/linked.png';
+import gitHub from '/images/github.png';
 
 const styles = {
     sectionStyle: {

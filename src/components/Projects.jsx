@@ -1,9 +1,9 @@
-import songSensei from '../assets/images/songsensei.png';
-import tuneStack from '../assets/images/tunestack.png';
-import careconnect from '../assets/images/careconnect.png';
-import scheduler from '../assets/images/scheduler.png';
-import editor from '../assets/images/editor.png';
-import weather from '../assets/images/weather.png';
+import songSensei from '/images/songsensei.png';
+import tuneStack from '/images/tunestack.png';
+import careconnect from '/images/careconnect.png';
+import scheduler from '/images/scheduler.png';
+import editor from '/images/editor.png';
+import weather from '/images/weather.png';
 
 const styles = {
   sectionStyle: {
