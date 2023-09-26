@@ -2,6 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
 const styles = {
+  closeButtonStyle: {
+    background: '#8B0000',
+    borderRadius: '20px',
+    color: 'white',
+    border: 'none',
+    padding: '0.25rem 0.5rem',
+    marginBottom: '1rem',
+  },
   ulStyle: (isMobile) => ({
     textAlign: 'center',
     display: 'flex',
@@ -18,8 +26,7 @@ const styles = {
   contactStyle: {},
 };
 
-function Navbar() {
-
+function Navbar({ onClose }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
 
   useEffect(() => {
@@ -35,28 +42,35 @@ function Navbar() {
 
   return (
     <nav style={styles.navbarStyle}>
-        <ul style={styles.ulStyle(isMobile)}>
-          <li style={styles.liStyle}>
-            <Link to="/" style={styles.linkStyle}>
-              Jorge Duarte
-            </Link>
+      <ul style={styles.ulStyle(isMobile)}>
+        <li style={styles.liStyle}>
+          <Link to="/" style={styles.linkStyle}>
+            Jorge Duarte
+          </Link>
+        </li>
+        <li style={styles.liStyle}>
+          <Link to="/projects" style={styles.linkStyle}>
+            Projects
+          </Link>
+        </li>
+        <li style={styles.liStyle}>
+          <Link to="/about" style={styles.linkStyle}>
+            About
+          </Link>
+        </li>
+        <li style={styles.liStyle}>
+          <Link to="/contact" style={styles.linkStyle}>
+            Contact Me
+          </Link>
+        </li>
+        {isMobile && (
+          <li>
+            <button style={styles.closeButtonStyle} onClick={onClose}>
+              X
+            </button>
           </li>
-          <li style={styles.liStyle}>
-            <Link to="/projects" style={styles.linkStyle}>
-              Projects
-            </Link>
-          </li>
-          <li style={styles.liStyle}>
-            <Link to="/about" style={styles.linkStyle}>
-              About
-            </Link>
-          </li>
-          <li style={styles.liStyle}>
-            <Link to="/contact" style={styles.linkStyle}>
-              Contact Me
-            </Link>
-          </li>
-        </ul>
+        )}
+      </ul>
     </nav>
   );
 }

@@ -12,7 +12,7 @@ function Routing() {
   const [navbarVisible, setNavbarVisible] = useState(false);
 
   const navbarStyles = {
-      transition: 'top 0.5s',
+      transition: 'top 1s ease',
       position: 'fixed',
       top: 0,
       width: '100%',
@@ -59,7 +59,7 @@ function Routing() {
   return (
       <>
           <div style={navbarVisible ? navbarStyles : hiddenNavbarStyles}>
-              <Navbar />
+              <Navbar onClose={ () => setNavbarVisible(false) } />
           </div>
           <Routes>
               <Route path="/" element={<Landing toggleNavbar={toggleNavbar} />} />

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 const styles = {
     parentDivStyle: {
         textAlign: 'center',
+        fontSize: '1.5rem'
     },
     sectionStyle: {
         backgroundColor: 'black',
@@ -24,8 +25,8 @@ const styles = {
         marginTop: '20px'
     },
     imageStyle: (index) => ({
-        width: '50px',
-        height: '50px',
+        width: '100px',
+        height: '100px',
         margin: '5px',
         opacity: 0,
         animation: `fadeInRotate 4s ${index * 0.4}s forwards`,
@@ -81,7 +82,7 @@ function Landing({ toggleNavbar }) {
     return (
         <div style={styles.parentDivStyle}>
             <style>{keyframes}</style>
-            <button onClick={toggleNavbar} style={styles.buttonStyle}>JD</button>
+            <button onClick={toggleNavbar} style={styles.buttonStyle}>=</button>
             
             <section style={styles.sectionStyle}>
                 <p style={styles.descriptionStyle}>{text}</p>
