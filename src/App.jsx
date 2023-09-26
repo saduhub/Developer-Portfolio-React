@@ -1,26 +1,82 @@
-// Import to be able to use routing.
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Landing from "./components/Landing";
+import About from "./components/About";
+import ContactMe from "./components/ContactMe";
+import Projects from "./components/Projects";
 
-import Navbar from "./components/Navbar"
-import Landing from "./components/Landing"
-import About from "./components/About"
-import ContactMe from "./components/ContactMe"
-import Projects from "./components/Projects"
+function Routing() {
+  const location = useLocation();
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [navbarVisible, setNavbarVisible] = useState(false);
 
-function App() {
+  const navbarStyles = {
+      transition: 'top 0.5s',
+      position: 'fixed',
+      top: 0,
+      width: '100%',
+      backdropFilter: 'blur(10px)',
+      backgroundColor: 'rgba(50, 50, 50, 0.2)',
+      zIndex: 1000,
+  };
+
+  const hiddenNavbarStyles = {
+      ...navbarStyles,
+      top: '-120%',
+  };
+
+  useEffect(() => {
+      const handleScroll = () => {
+          const currentScrollTop = window.scrollY;
+
+          if (currentScrollTop <= 0) {
+              setNavbarVisible(true);
+          } else if (currentScrollTop > lastScrollTop) {
+              setNavbarVisible(false);
+          } else {
+              setNavbarVisible(true);
+          }
+
+          setLastScrollTop(currentScrollTop);
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, [location, lastScrollTop]);
+
+  useEffect(() => {
+      setNavbarVisible(false);
+  }, [location.pathname]);
+
+  const toggleNavbar = () => {
+      setNavbarVisible(prevVisible => !prevVisible);
+  };
+
   return (
-    <>
-      <BrowserRouter>
-        <Navbar/>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<ContactMe />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+      <>
+          <div style={navbarVisible ? navbarStyles : hiddenNavbarStyles}>
+              <Navbar />
+          </div>
+          <Routes>
+              <Route path="/" element={<Landing toggleNavbar={toggleNavbar} />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<ContactMe />} />
+              <Route path="/projects" element={<Projects />} />
+          </Routes>
+      </>
+  );
 }
 
-export default App
+function App() {
+    return (
+        <BrowserRouter>
+            <Routing />
+        </BrowserRouter>
+    );
+}
+
+export default App;

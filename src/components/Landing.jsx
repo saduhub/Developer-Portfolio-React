@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-// Styles
 const styles = {
+    parentDivStyle: {
+        textAlign: 'center',
+    },
     sectionStyle: {
         backgroundColor: 'black',
-        marginTop: '10rem',
-        marginLeft: '1rem',
-        marginRight: '1rem',
+        margin: '1rem 1rem 0 1rem',
         borderRadius: '1rem',
         padding: '1rem',
     },
     descriptionStyle: {
-        color: 'var(--purple-font-color)',
         textAlign: 'center',
     },
     nameStyle: {
@@ -25,7 +24,6 @@ const styles = {
         marginTop: '20px'
     },
     imageStyle: (index) => ({
-        // borderRadius: '25%',
         width: '50px',
         height: '50px',
         margin: '5px',
@@ -33,9 +31,16 @@ const styles = {
         animation: `fadeInRotate 4s ${index * 0.4}s forwards`,
         objectFit: 'cover',
     }),
+    buttonStyle: {
+        backgroundColor: 'transparent',
+        border: 'none',
+        color: 'white',
+        fontSize: '24px', 
+        letterSpacing: '2px',
+        margin: '2rem auto'
+    },
 };
 
-// Keyframes for fade-in and rotate animation
 const keyframes = `
   @keyframes fadeInRotate {
       0% { opacity: 0; transform: rotate(0deg); }
@@ -44,7 +49,6 @@ const keyframes = `
   }
 `;
 
-// Images
 const techImages = [
     '/images/mongodb.png',
     '/images/mysql.png',
@@ -58,7 +62,7 @@ const techImages = [
     // '/images/python.png',
 ];
 
-function Landing() {
+function Landing({ toggleNavbar }) {
     const [text, setText] = useState('');
     const fullText = "Hello! My name is Jorge Duarte and I am a full-stack application developer";
     
@@ -75,8 +79,9 @@ function Landing() {
     }, [text]);
     
     return (
-        <div>
+        <div style={styles.parentDivStyle}>
             <style>{keyframes}</style>
+            <button onClick={toggleNavbar} style={styles.buttonStyle}>JD</button>
             
             <section style={styles.sectionStyle}>
                 <p style={styles.descriptionStyle}>{text}</p>
