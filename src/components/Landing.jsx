@@ -1,54 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-const styles = {
-    parentDivStyle: {
-        textAlign: 'center',
-        fontSize: '1.5rem'
-    },
-    sectionStyle: {
-        backgroundColor: 'black',
-        margin: '1rem 1rem 0 1rem',
-        borderRadius: '1rem',
-        padding: '1rem',
-    },
-    descriptionStyle: {
-        textAlign: 'center',
-    },
-    nameStyle: {
-        textAlign: 'center',
-    },
-    imageContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-        marginTop: '20px'
-    },
-    imageStyle: (index) => ({
-        width: '100px',
-        height: '100px',
-        margin: '5px',
-        opacity: 0,
-        animation: `fadeInRotate 4s ${index * 0.4}s forwards`,
-        objectFit: 'cover',
-    }),
-    buttonStyle: {
-        backgroundColor: 'transparent',
-        border: 'none',
-        color: 'white',
-        fontSize: '24px', 
-        letterSpacing: '2px',
-        margin: '2rem auto'
-    },
-};
-
-const keyframes = `
-  @keyframes fadeInRotate {
-      0% { opacity: 0; transform: rotate(0deg); }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; transform: rotate(360deg); }
-  }
-`;
+import './Landing.css';
 
 const techImages = [
     '/images/mongodb.png',
@@ -59,8 +10,6 @@ const techImages = [
     '/images/react.png',
     '/images/tailwind-css.svg',
     '/images/heroku.png',
-    // '/images/jquery.png',
-    // '/images/python.png',
 ];
 
 function Landing({ toggleNavbar }) {
@@ -91,16 +40,21 @@ function Landing({ toggleNavbar }) {
     }, [text]);
     
     return (
-        <div style={styles.parentDivStyle}>
-            <style>{keyframes}</style>
-            {isMobile && <button onClick={toggleNavbar} style={styles.buttonStyle}>=</button>} {/* Conditionally render based on isMobile state */}
+        <div className="parentDivStyle">
+            {isMobile && <button onClick={toggleNavbar} className="buttonStyle">=</button>}
             
-            <section style={styles.sectionStyle}>
-                <p style={styles.descriptionStyle}>{text}</p>
+            <section className="sectionStyle">
+                <p className="descriptionStyle">{text}</p>
 
-                <div style={styles.imageContainer}>
+                <div className="imageContainer">
                     {techImages.map((src, index) => (
-                        <img key={index} src={src} alt={`Tech ${index + 1}`} style={styles.imageStyle(index)} />
+                        <img 
+                            key={index} 
+                            src={src} 
+                            alt={`Tech ${index + 1}`} 
+                            className="imageStyle" 
+                            style={{ animation: `fadeInRotate 4s ${index * 0.4}s forwards` }}
+                        />
                     ))}
                 </div>
             </section>

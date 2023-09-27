@@ -1,0 +1,29 @@
+.closeButton {
+    background: #8B0000;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ulStyle {
+    text-align: center;
+    display: flex;
+    flex-direction: row;  /* Default for larger screens */
+}
+
+@media (max-width: 450px) {
+    .ulStyle {
+        flex-direction: column;
+    }
+}
+
+.liStyle {
+    margin: 1rem 0;
+}
+
+.linkStyle {
+    text-decoration: none;
+    color: white;
+}

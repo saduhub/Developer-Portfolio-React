@@ -1,0 +1,46 @@
+.parentDivStyle {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.sectionStyle {
+    background-color: black;
+    margin: 1rem 1rem 0 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.descriptionStyle, .nameStyle {
+    text-align: center;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.imageStyle {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    opacity: 0;
+    object-fit: cover;
+}
+
+.buttonStyle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin: 2rem auto;
+}
+
+@keyframes fadeInRotate {
+    0% { opacity: 0; transform: rotate(0deg); }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; transform: rotate(360deg); }
+}

@@ -1,30 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-
-const styles = {
-  closeButtonStyle: {
-    background: '#8B0000',
-    borderRadius: '20px',
-    color: 'white',
-    border: 'none',
-    padding: '0.25rem 0.5rem',
-    marginBottom: '1rem',
-  },
-  ulStyle: (isMobile) => ({
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: isMobile ? 'column' : 'row',
-  }),
-  liStyle: {
-    margin: '1rem 0',
-  },
-  linkStyle: {
-    textDecoration: 'none',
-    color: 'white',
-  },
-  navbarStyle: {},
-  contactStyle: {},
-};
+import "./Navbar.css";
 
 function Navbar({ onClose }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
@@ -41,31 +17,31 @@ function Navbar({ onClose }) {
   }, []);
 
   return (
-    <nav style={styles.navbarStyle}>
-      <ul style={styles.ulStyle(isMobile)}>
-        <li style={styles.liStyle}>
-          <Link to="/" style={styles.linkStyle}>
+    <nav>
+      <ul className={`ulStyle ${isMobile ? 'mobile' : ''}`}>
+        <li className="liStyle">
+          <Link to="/" className="linkStyle">
             Jorge Duarte
           </Link>
         </li>
-        <li style={styles.liStyle}>
-          <Link to="/projects" style={styles.linkStyle}>
+        <li className="liStyle">
+          <Link to="/projects" className="linkStyle">
             Projects
           </Link>
         </li>
-        <li style={styles.liStyle}>
-          <Link to="/about" style={styles.linkStyle}>
+        <li className="liStyle">
+          <Link to="/about" className="linkStyle">
             About
           </Link>
         </li>
-        <li style={styles.liStyle}>
-          <Link to="/contact" style={styles.linkStyle}>
+        <li className="liStyle">
+          <Link to="/contact" className="linkStyle">
             Contact Me
           </Link>
         </li>
         {isMobile && (
           <li>
-            <button style={styles.closeButtonStyle} onClick={onClose}>
+            <button className="closeButton" onClick={onClose}>
               X
             </button>
           </li>
