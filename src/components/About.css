@@ -1,0 +1,32 @@
+.aboutSectionStyle {
+    background-color: black;
+}
+
+.aboutDivStyle {
+    text-shadow: 0px 0px 4px var(--purple-font-color);
+    max-width: 50rem;
+    margin: 5rem auto;
+}
+
+.aboutH3Style, .aboutPStyle {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.aboutImageDivStyle {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutImageStyle {
+    background-size: cover;
+    background-position: center;
+    max-width: 20rem;
+    width: 100%; 
+    padding-top: 30%;
+    height: auto;
+    margin: 0px 20px;
+    border-radius: 1rem;
+}
