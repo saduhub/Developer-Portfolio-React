@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Projects.css';
 
 import songSensei from '/images/songsensei.png';
@@ -23,7 +23,7 @@ const projects = {
   },
   careConnect: {
     title: 'Care Connect',
-    description: 'Plan, volunteer, and coordinate assistance within your community.',
+    description: 'Care for your community.',
     link: 'https://care-connect-378fa5174d96.herokuapp.com/',
     image: careconnect,
   },
@@ -41,38 +41,51 @@ const projects = {
   },
   weather: {
     title: 'Weather Watch',
-    description: 'Weather app using Open Weather API',
+    description: 'Check the weather!',
     link: 'https://saduhub.github.io/Weather-Forecast-App/',
     image: weather,
   },
 };
 
-function Projects() {
+function Projects({ toggleNavbar }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
+    
+  useEffect(() => {
+      const handleResize = () => {
+          setIsMobile(window.innerWidth <= 450);
+      };
+      window.addEventListener('resize', handleResize);
+      return () => {
+          window.removeEventListener('resize', handleResize);
+      };
+  }, []);
+
   return (
     <section className="projectsSectionStyle">
-      <div className="projectsAllProjectsDivStyle">
+      {isMobile && <button onClick={toggleNavbar} className="buttonStyle">=</button>}
+      <div className="allProjectsDivStyle">
         {Object.keys(projects).map((projectKey) => {
           const project = projects[projectKey];
           return (
-            <div key={projectKey} className="projectsProjectDivStyle">
-              <h2 className="projectsH2Style">{project.title}</h2>
-              <p className="projectsPStyle">{project.description}</p>
+            <div key={projectKey} className="projectDivStyle">
+              <h2 className="projectH2Style">{project.title}</h2>
+              <p className="projectPStyle">{project.description}</p>
               <div>
                 <a href={project.link}>
-                  <div 
-                    className="projectsImageStyle"
-                    style={{ backgroundImage: `url(${project.image})` }}
+                  <img 
+                    className="projectImageStyle"
+                    src={ project.image }
                     alt={`${project.title} screenshot`}>
-                  </div>
+                  </img>
                 </a>
               </div>
             </div>
           );
         })}
       </div>
-      <div className="projectsDivStyle">
-        <h2 className="projectsH2Style">Technologies Used</h2>
-        <p className="projectsPStyle">
+      <div className="techDivStyle">
+        <h2 className="techH2Style">Technologies Used</h2>
+        <p className="techPStyle">
           JavaScript ES6+, CSS3, HTML5, SQL, NoSQL, GitHub, MongoDB, MySQL, Express, React, 
           Node, JQuery, Bootstrap, Tailwind CSS, DOM, APIs, JSON, AJAX, OOP, MVC, Sequelize, 
           Jest test suites, git, npm, Mongoose.

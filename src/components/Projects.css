@@ -1,41 +1,73 @@
-.projectsSectionStyle {
-    background-color: black;
+.buttonStyle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 2px;
 }
 
-.projectsAllProjectsDivStyle {
+.projectsSectionStyle {
+    background-color: black;
+    text-align: center;
+}
+
+.allProjectsDivStyle {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100%;
 }
 
-.projectsProjectDivStyle {
-    margin: 2rem;
+.projectDivStyle {
+    margin: 1rem;
     padding: 1rem;
     background-color: rgba(30, 30, 30, 0.8);
     border-radius: 1rem;
     max-width: 20rem;
 }
 
-.projectsImageStyle {
-    width: 100%; 
-    padding-top: 56.25%;
-    background-size: cover;
-    background-position: center;
+.projectH2Style, .projectPStyle {
+    text-align: center;
+    margin: 1rem auto;
     max-width: 15rem;
-    height: auto;
-    margin: 0px 20px;
+}
+
+.projectImageStyle {
+    width: 15rem;
+    height: 10rem;
     border-radius: 1rem;
 }
 
-.projectsDivStyle {
-    text-shadow: 0px 0px 4px var(--purple-font-color);
-    margin: 5rem;
+.techDivStyle {
+    padding: 1rem;
 }
 
-.projectsH2Style, .projectsPStyle {
+.techH2Style, .techPStyle {
     text-align: center;
     margin: 1rem auto;
-    max-width: 20rem;
+    max-width: 70vw;
+}
+
+@media (min-width: 450px) {
+    .allProjectsDivStyle {
+        margin: 10rem auto 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 70vw;
+    }
+    
+    .projectDivStyle {
+        max-width: 30rem;
+    }
+    
+    .projectH2Style, .projectPStyle {
+        max-width: 20rem;
+    }
+    
+    .projectImageStyle {
+        width: 20rem;
+        height: 15rem;
+    }
 }
