@@ -1,0 +1,23 @@
+.contactSectionStyle {
+    text-align: center;
+}
+
+.contactCardStyle {
+    margin-top: 10rem;
+}
+
+.contactDivStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactImageStyle {
+    max-width: 80px;
+    height: auto;
+    margin: 1rem 1rem;
+}
+
+.contactH4Style {
+    font-size: 2rem;
+}
