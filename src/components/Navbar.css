@@ -10,13 +10,7 @@
 .ulStyle {
     text-align: center;
     display: flex;
-    flex-direction: row;  /* Default for larger screens */
-}
-
-@media (max-width: 450px) {
-    .ulStyle {
-        flex-direction: column;
-    }
+    flex-direction: column;
 }
 
 .liStyle {
@@ -26,4 +20,24 @@
 .linkStyle {
     text-decoration: none;
     color: white;
+}
+
+@media (min-width: 450px) {
+    .ulStyle {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .liStyle {
+        margin: 2rem 0;
+    }
+    .linkStyle {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+@media (min-width: 600px) {
+    .linkStyle {
+        font-size: 24px;
+    }
 }

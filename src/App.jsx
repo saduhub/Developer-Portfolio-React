@@ -76,9 +76,9 @@ function Routing() {
         </div>
         <Routes>
             <Route path="/" element={<Landing toggleNavbar={toggleNavbar} />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<ContactMe />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About toggleNavbar={toggleNavbar} />} />
+            <Route path="/contact" element={<ContactMe toggleNavbar={toggleNavbar} />} />
+            <Route path="/projects" element={<Projects toggleNavbar={toggleNavbar} />} />
         </Routes>
         </>
     );

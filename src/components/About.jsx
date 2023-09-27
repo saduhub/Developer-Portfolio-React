@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './About.css';
 import profile from '/images/profile.png';
 
-function About() {
+function About({ toggleNavbar }) {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 450);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <section className="aboutSectionStyle">
+            {isMobile && <button onClick={toggleNavbar} className="buttonStyle">=</button>}
             <div className="aboutDivStyle">
                 <h3 className="aboutH3Style">About me</h3>
                 <p className="aboutPStyle">
@@ -12,11 +25,11 @@ function About() {
                 </p>
             </div>
             <div className="aboutImageDivStyle">
-                <div 
+                <img 
                     className="aboutImageStyle"
-                    style={{ backgroundImage: `url(${profile})` }}
+                    src={profile}
                     alt="Jorge Duarte">
-                </div>
+                </img>
             </div>
         </section> 
     );

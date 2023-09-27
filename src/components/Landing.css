@@ -44,3 +44,9 @@
     50% { opacity: 0.5; }
     100% { opacity: 1; transform: rotate(360deg); }
 }
+
+@media (min-width: 450px) {
+    .sectionStyle {
+        margin: 10rem 1rem 0 1rem;
+    }
+}
