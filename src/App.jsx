@@ -7,68 +7,81 @@ import ContactMe from "./components/ContactMe";
 import Projects from "./components/Projects";
 
 function Routing() {
-  const location = useLocation();
-  const [lastScrollTop, setLastScrollTop] = useState(0);
-  const [navbarVisible, setNavbarVisible] = useState(false);
+    const location = useLocation();
+    const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [navbarVisible, setNavbarVisible] = useState(true); 
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
 
-  const navbarStyles = {
-      transition: 'top 1s ease',
-      position: 'fixed',
-      top: 0,
-      width: '100%',
-      backdropFilter: 'blur(10px)',
-      backgroundColor: 'rgba(50, 50, 50, 0.2)',
-      zIndex: 1000,
-  };
+    const navbarStyles = {
+        transition: 'top 1s ease',
+        position: 'fixed',
+        top: 0,
+        width: '100%',
+        backdropFilter: 'blur(10px)',
+        backgroundColor: 'rgba(50, 50, 50, 0.2)',
+        zIndex: 1000,
+    };
 
-  const hiddenNavbarStyles = {
-      ...navbarStyles,
-      top: '-120%',
-  };
+    const hiddenNavbarStyles = {
+        ...navbarStyles,
+        top: '-120%',
+    };
 
-  useEffect(() => {
-      const handleScroll = () => {
-          const currentScrollTop = window.scrollY;
+    useEffect(() => {
+        const handleResize = () => {
+        setIsMobile(window.innerWidth <= 450);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+        window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-          if (currentScrollTop <= 0) {
-              setNavbarVisible(true);
-          } else if (currentScrollTop > lastScrollTop) {
-              setNavbarVisible(false);
-          } else {
-              setNavbarVisible(true);
-          }
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollTop = window.scrollY;
+    
+            if (currentScrollTop <= 0) {
+                setNavbarVisible(true);
+            } else if (currentScrollTop > lastScrollTop) {
+                setNavbarVisible(false);
+            } else {
+                setNavbarVisible(true);
+            }
+    
+            setLastScrollTop(currentScrollTop);
+        };
+    
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [lastScrollTop]);
 
-          setLastScrollTop(currentScrollTop);
-      };
+    useEffect(() => {
+        if (isMobile) {
+        setNavbarVisible(false);
+        }
+    }, [location.pathname, isMobile]);
 
-      window.addEventListener('scroll', handleScroll, { passive: true });
+    const toggleNavbar = () => {
+        setNavbarVisible(prevVisible => !prevVisible);
+    };
 
-      return () => {
-          window.removeEventListener('scroll', handleScroll);
-      };
-  }, [location, lastScrollTop]);
-
-  useEffect(() => {
-      setNavbarVisible(false);
-  }, [location.pathname]);
-
-  const toggleNavbar = () => {
-      setNavbarVisible(prevVisible => !prevVisible);
-  };
-
-  return (
-      <>
-          <div style={navbarVisible ? navbarStyles : hiddenNavbarStyles}>
-              <Navbar onClose={ () => setNavbarVisible(false) } />
-          </div>
-          <Routes>
-              <Route path="/" element={<Landing toggleNavbar={toggleNavbar} />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<ContactMe />} />
-              <Route path="/projects" element={<Projects />} />
-          </Routes>
-      </>
-  );
+    return (
+        <>
+        <div style={navbarVisible ? navbarStyles : hiddenNavbarStyles}>
+            <Navbar onClose={() => setNavbarVisible(false)} />
+        </div>
+        <Routes>
+            <Route path="/" element={<Landing toggleNavbar={toggleNavbar} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<ContactMe />} />
+            <Route path="/projects" element={<Projects />} />
+        </Routes>
+        </>
+    );
 }
 
 function App() {

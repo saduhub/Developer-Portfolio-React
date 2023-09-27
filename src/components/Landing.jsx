@@ -65,7 +65,18 @@ const techImages = [
 
 function Landing({ toggleNavbar }) {
     const [text, setText] = useState('');
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 450);
     const fullText = "Hello! My name is Jorge Duarte and I am a full-stack application developer";
+    
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 450);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     
     useEffect(() => {
         const typeText = () => {
@@ -82,7 +93,7 @@ function Landing({ toggleNavbar }) {
     return (
         <div style={styles.parentDivStyle}>
             <style>{keyframes}</style>
-            <button onClick={toggleNavbar} style={styles.buttonStyle}>=</button>
+            {isMobile && <button onClick={toggleNavbar} style={styles.buttonStyle}>=</button>} {/* Conditionally render based on isMobile state */}
             
             <section style={styles.sectionStyle}>
                 <p style={styles.descriptionStyle}>{text}</p>
