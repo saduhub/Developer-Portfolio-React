@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './Landing.css';
 
 const techImages = [
-    '/images/mongodb.png',
-    '/images/mysql.png',
-    '/images/node-js.png',
-    '/images/graphql.png',
-    '/images/express.svg',
-    '/images/react.png',
-    '/images/tailwind-css.svg',
-    '/images/heroku.png',
+    '/Developer-Portfolio-React/images/mongodb.png',
+    '/Developer-Portfolio-React/images/mysql.png',
+    '/Developer-Portfolio-React/images/node-js.png',
+    '/Developer-Portfolio-React/images/graphql.png',
+    '/Developer-Portfolio-React/images/express.svg',
+    '/Developer-Portfolio-React/images/react.png',
+    '/Developer-Portfolio-React/images/tailwind-css.svg',
+    '/Developer-Portfolio-React/images/heroku.png',
 ];
 
 function Landing({ toggleNavbar }) {

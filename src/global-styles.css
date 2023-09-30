@@ -1,3 +1,6 @@
+html {
+  cursor: url('/images/cursor.svg') 0 0, auto;
+}
 /* Css reset */
 /* Box sizing rules */
 *, *::before, *::after {
